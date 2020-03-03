@@ -43,7 +43,7 @@ import common.ListNode;
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
         ListNode cur = head;
@@ -73,7 +73,7 @@ class Solution {
     //     ListNode.prtLinkedList(l1);
     //     ListNode l2 = ListNode.genLinkedList(arr2);
     //     ListNode.prtLinkedList(l2);
-    //     ListNode res = new Solution().addTwoNumbers(l1, l2);
+    //     ListNode res = new Solution2().addTwoNumbers(l1, l2);
     //     ListNode.prtLinkedList(res);
     //     System.out.println();
     // }
