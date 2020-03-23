@@ -10,14 +10,23 @@ package common;
  * @Desc    :
  */
 public class Tree {
-    private static TreeNode mk(int[] pre, int[] in, int startPre, int endPre, int startIn, int endIn) {
-        if (startPre == endPre) return null;
+    private static TreeNode mk(int[] pre, int[] in,
+                               int startPre, int endPre,
+                               int startIn, int endIn) {
+        if (startPre == endPre) {
+            return null;
+        }
         TreeNode root = new TreeNode(pre[startPre]);
-        int idx = startIn;  // 中序遍历序列根结点索引
-        while (idx < endIn && in[idx] != root.val) idx++;
+        // 中序遍历序列根结点索引
+        int idx = startIn;
+        while (idx < endIn && in[idx] != root.val) {
+            idx++;
+        }
 
-        int llen = idx - startIn;  // 左子树序列长度
-        int mpre = startPre + 1 + llen;  // 左右子树序列中点（右子树序列起始点）
+        // 左子树序列长度
+        int llen = idx - startIn;
+        // 左右子树序列中点（右子树序列起始点）
+        int mpre = startPre + 1 + llen;
         root.left = mk(pre, in, startPre + 1, mpre, startIn, idx - 1);
         root.right = mk(pre, in, mpre, endPre, idx + 1, endIn);
         return root;

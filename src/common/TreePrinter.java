@@ -11,7 +11,9 @@ package common;
  */
 public class TreePrinter {
     private static void linuxStyle(TreeNode root, StringBuilder sb, String prefix, String childPrefix) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         sb.append(prefix);
         sb.append(root.val);
         sb.append("\n");
@@ -26,16 +28,41 @@ public class TreePrinter {
     }
 
     /**
-     * z 
-     * ├── c 
-     * │ ├── a 
-     * │ └── b 
+     * z
+     * ├── c
+     * │ ├── a
+     * │ └── b
      * └── d
-     * 
+     *
      * @param root
      */
     public static void prtLinuxStyle(TreeNode root) {
         System.out.println(getLinuxStyle(root).toString());
+    }
+
+    public static StringBuilder horizontalStyle(TreeNode root, StringBuilder sb) {
+        if (root.right != null) {
+            horizontalStyle(root.right, sb, true, "");
+        }
+        sb.append(root.val).append("\n");
+        if (root.left != null) {
+            horizontalStyle(root.left, sb, false, "");
+        }
+        return sb;
+    }
+
+    private static void horizontalStyle(TreeNode root, StringBuilder sb, boolean isRight,
+            String indent) {
+        if (root.right != null) {
+            horizontalStyle(root.right, sb, true, indent + (isRight ? "        " : " |      "));
+        }
+        sb.append(indent);
+        sb.append(isRight ? " /" : " \\");
+        sb.append("----- ");
+        sb.append(root.val).append("\n");
+        if (root.left != null) {
+            horizontalStyle(root.left, sb, false, indent + (isRight ? " |      " : "        "));
+        }
     }
 
     /**
@@ -55,33 +82,26 @@ public class TreePrinter {
      *        |       /----- 3
      *        \----- 2
      *                \----- 1
+     *
      * @param root
      */
     public static void prtHorizontalStyle(TreeNode root) {
-
+        System.out.println(horizontalStyle(root, new StringBuilder()).toString());
     }
 
-    public static StringBuilder horizontalStyle(TreeNode root, StringBuilder sb) {
-        if (root.right != null) {
-            horizontalStyle(root.right, sb, true, "");
-        }
-        sb.append(root.val).append("\n");
-        if (root.left != null) {
-            horizontalStyle(root.left, sb, false, "");
-        }
-        return sb;
-    }
+    public static void main(String[] args) {
+        // Case 1
+        int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
+        TreeNode root = Tree.mkTree(pre, in);
+        TreePrinter.prtLinuxStyle(root);
+        TreePrinter.prtHorizontalStyle(root);
 
-    private static void horizontalStyle(TreeNode root, StringBuilder sb, boolean isRight, String indent) {
-        if (root.right != null) {
-            horizontalStyle(root.right, sb, true, indent + (isRight ? "        " : " |      "));
-        }
-        sb.append(indent);
-        sb.append(isRight ? " /" : " \\");
-        sb.append("----- ");
-        sb.append(root.val).append("\n");
-        if (root.left != null) {
-            horizontalStyle(root.left, sb, false, indent + (isRight ? " |      " : "        "));
-        }
+        // Case 2
+        pre = new int[] {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 20, 15};
+        in = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20};
+        root = Tree.mkTree(pre, in);
+        TreePrinter.prtLinuxStyle(root);
+        TreePrinter.prtHorizontalStyle(root);
     }
 }
