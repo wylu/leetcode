@@ -41,6 +41,15 @@ import java.util.HashMap;
  * 
  */
 
+/**
+ * @File    :   3.longest-substring-without-repeating-characters.java
+ * @Time    :   2020/03/23 17:44:21
+ * @Author  :   wylu
+ * @Version :   1.0
+ * @Contact :   15wylu@gmail.com
+ * @License :   (C)Copyright 2020, wylu-CHINA-SHENZHEN
+ * @Desc    :
+ */
 // @lc code=start
 class Solution {
     public int lengthOfLongestSubstring(String s) {

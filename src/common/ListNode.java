@@ -1,7 +1,13 @@
 package common;
 
 /**
- * @author wylu
+ * @File    :   ListNode.java
+ * @Time    :   2020/03/23 17:37:46
+ * @Author  :   wylu
+ * @Version :   1.0
+ * @Contact :   15wylu@gmail.com
+ * @License :   (C)Copyright 2020, wylu-CHINA-SHENZHEN
+ * @Desc    :
  */
 public class ListNode {
     public int val;
