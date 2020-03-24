@@ -45,4 +45,10 @@ public class Tree {
         }
         return mk(pre, in, 0, pre.length, 0, in.length);
     }
+
+    public static void main(String[] args) {
+        int[] pre = new int[] {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 16, 15};
+        int[] in = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+        TreeNode root = Tree.mkTree(pre, in);
+    }
 }
