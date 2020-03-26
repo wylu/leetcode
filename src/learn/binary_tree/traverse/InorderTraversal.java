@@ -1,11 +1,11 @@
 package learn.binary_tree.traverse;
 
+import common.Tree;
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import common.Tree;
-import common.TreeNode;
 
 /**
  * Definition for a binary tree node.
@@ -18,21 +18,21 @@ import common.TreeNode;
  */
 
 /**
- * @File    :   PreorderTraversal.java
- * @Time    :   2020/03/23 17:39:43
+ * @File    :   InorderTraversal.java
+ * @Time    :   2020/03/26 13:43:00
  * @Author  :   wylu
  * @Version :   1.0
  * @Contact :   15wylu@gmail.com
  * @License :   (C)Copyright 2020, wylu-CHINA-SHENZHEN
  * @Desc    :
  */
-class PreorderTraversal {
+public class InorderTraversal {
     private static void recursive(TreeNode root, List<Integer> res) {
         if (root == null) return;
-        // 访问当前树的根结点
-        res.add(root.val);
         // 遍历左子树
         recursive(root.left, res);
+        // 访问当前树的根结点
+        res.add(root.val);
         // 遍历右子树
         recursive(root.right, res);
     }
@@ -41,17 +41,17 @@ class PreorderTraversal {
         ArrayList<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
-        // 借助栈实现迭代前序遍历二叉树
+        // 借助栈实现迭代中序遍历二叉树
         LinkedList<TreeNode> stack = new LinkedList<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
+        while (root != null || !stack.isEmpty()) {
+            // 确保先遍历未曾访问过的最左结点
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
             root = stack.pop();
-            // 访问当前树的根结点
             res.add(root.val);
-            // 先将右子树压入栈，以确保先遍历左子树
-            if (root.right != null) stack.push(root.right);
-            // 将左子树压入栈
-            if (root.left != null) stack.push(root.left);
+            root = root.right;
         }
         return res;
     }
@@ -69,9 +69,9 @@ class PreorderTraversal {
     public static void main(String[] args) {
         int[] pre = new int[] {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 16, 15};
         int[] in = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-        List<Integer> res = PreorderTraversal.iterateTraversal(Tree.mkTree(pre, in));
+        List<Integer> res = InorderTraversal.iterateTraversal(Tree.mkTree(pre, in));
         System.out.println(res);
-        res = PreorderTraversal.recursiveTraversal(Tree.mkTree(pre, in));
+        res = InorderTraversal.recursiveTraversal(Tree.mkTree(pre, in));
         System.out.println(res);
     }
 }
