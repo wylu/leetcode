@@ -1,3 +1,6 @@
 # IntelliJ project files
 .idea
 out
+
+# VSCode
+.vscode
