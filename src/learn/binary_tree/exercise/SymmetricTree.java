@@ -1,4 +1,4 @@
-package learn.binary_tree.traverse;
+package learn.binary_tree.exercise;
 
 import common.Tree;
 import common.TreeNode;
