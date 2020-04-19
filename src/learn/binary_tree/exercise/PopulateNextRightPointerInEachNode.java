@@ -2,8 +2,6 @@ package learn.binary_tree.exercise;
 
 import common.Node;
 
-import java.util.LinkedList;
-
 /**
  * @File    :   PopulateNextRightPointerInEachNode.java
  * @Time    :   2020/04/18 22:37:09
@@ -55,7 +53,7 @@ public class PopulateNextRightPointerInEachNode {
     public static void main(String[] args) {
         int[] pre = new int[]{1, 2, 4, 5, 3, 6, 7};
         int[] in = new int[]{4, 2, 5, 1, 6, 3, 7};
-        Node tree = Node.mkTree(pre, in);
+        Node tree = Node.mkTreeFromPreAndIn(pre, in);
         PopulateNextRightPointerInEachNode populate = new PopulateNextRightPointerInEachNode();
         populate.connect(tree);
         PopulateNextRightPointerInEachNode.prt(tree);

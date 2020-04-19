@@ -1,6 +1,5 @@
 package learn.binary_tree.traverse;
 
-import common.Tree;
 import common.TreeNode;
 import common.TreePrinter;
 
@@ -52,7 +51,7 @@ public class LevelOrderTraversal {
     public static void main(String[] args) {
         int[] pre = new int[] {3, 9, 20, 15, 7};
         int[] in = new int[] {9, 3, 15, 20, 7};
-        TreeNode tree = Tree.mkTree(pre, in);
+        TreeNode tree = TreeNode.mkTreeFromPreAndIn(pre, in);
         TreePrinter.prtHorizontalStyle(tree);
         List<List<Integer>> res = levelOrder(tree);
         System.out.println(res);

@@ -1,6 +1,5 @@
 package learn.binary_tree.exercise;
 
-import common.Tree;
 import common.TreeNode;
 import common.TreePrinter;
 
@@ -59,7 +58,7 @@ public class PathSum {
     public static void main(String[] args) {
         int[] pre = new int[] {5, 4, 11, 7, 2, 8, 13, 4, 1};
         int[] in = new int[] {7, 11, 2, 4, 5, 13, 8, 4, 1};
-        TreeNode tree = Tree.mkTree(pre, in);
+        TreeNode tree = TreeNode.buildFromPreAndIn(pre, in);
         TreePrinter.prtHorizontalStyle(tree);
         PathSum pathSum = new PathSum();
         System.out.println(pathSum.hasPathSum(tree, 21));

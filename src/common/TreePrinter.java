@@ -91,16 +91,32 @@ public class TreePrinter {
 
     public static void main(String[] args) {
         // Case 1
+        System.out.println("Case 1: -------------------------------------------");
         int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
         int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
-        TreeNode root = Tree.mkTree(pre, in);
+        TreeNode root = TreeNode.mkTreeFromPreAndIn(pre, in);
         TreePrinter.prtLinuxStyle(root);
         TreePrinter.prtHorizontalStyle(root);
 
         // Case 2
+        System.out.println("Case 2: -------------------------------------------");
+        int[] post = {7, 4, 2, 5, 8, 6, 3, 1};
+        root = TreeNode.mkTreeFromInAndPost(in, post);
+        TreePrinter.prtLinuxStyle(root);
+        TreePrinter.prtHorizontalStyle(root);
+
+        // Case 3
+        System.out.println("Case 3: -------------------------------------------");
         pre = new int[] {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 20, 15};
         in = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20};
-        root = Tree.mkTree(pre, in);
+        root = TreeNode.mkTreeFromPreAndIn(pre, in);
+        TreePrinter.prtLinuxStyle(root);
+        TreePrinter.prtHorizontalStyle(root);
+
+        // Case 4
+        System.out.println("Case 4: -------------------------------------------");
+        post = new int[] {1, 3, 2, 5, 7, 6, 4, 9, 11, 10, 13, 15, 20, 14, 12, 8};
+        root = TreeNode.mkTreeFromInAndPost(in, post);
         TreePrinter.prtLinuxStyle(root);
         TreePrinter.prtHorizontalStyle(root);
     }

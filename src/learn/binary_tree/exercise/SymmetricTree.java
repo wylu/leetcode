@@ -1,6 +1,5 @@
 package learn.binary_tree.exercise;
 
-import common.Tree;
 import common.TreeNode;
 import common.TreePrinter;
 
@@ -48,7 +47,7 @@ public class SymmetricTree {
     public static void main(String[] args) {
         int[] pre = new int[] {1, 2, 3, 4, 2, 4, 3};
         int[] in = new int[] {3, 2, 4, 1, 4, 2, 3};
-        TreeNode tree = Tree.mkTree(pre, in);
+        TreeNode tree = TreeNode.buildFromPreAndIn(pre, in);
         TreePrinter.prtHorizontalStyle(tree);
         SymmetricTree symmetricTree = new SymmetricTree();
         System.out.println(symmetricTree.isSymmetric(tree));

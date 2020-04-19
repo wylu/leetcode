@@ -1,11 +1,10 @@
 package learn.binary_tree.traverse;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import common.Tree;
-import common.TreeNode;
 
 /**
  * Definition for a binary tree node.
@@ -69,9 +68,9 @@ class PreorderTraversal {
     public static void main(String[] args) {
         int[] pre = new int[] {8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 16, 15};
         int[] in = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-        List<Integer> res = PreorderTraversal.iterateTraversal(Tree.mkTree(pre, in));
+        List<Integer> res = PreorderTraversal.iterateTraversal(TreeNode.mkTreeFromPreAndIn(pre, in));
         System.out.println(res);
-        res = PreorderTraversal.recursiveTraversal(Tree.mkTree(pre, in));
+        res = PreorderTraversal.recursiveTraversal(TreeNode.mkTreeFromPreAndIn(pre, in));
         System.out.println(res);
     }
 }
