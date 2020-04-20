@@ -1,4 +1,4 @@
-package learn.binary_tree.traverse;
+package learn.binarytree.traverse;
 
 import common.TreeNode;
 import common.TreePrinter;
