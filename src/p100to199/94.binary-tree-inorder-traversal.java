@@ -59,7 +59,7 @@ import java.util.List;
  * @License :   (C)Copyright 2020, wylu-CHINA-SHENZHEN
  * @Desc    :
  */
-class Solution {
+class Solution94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();

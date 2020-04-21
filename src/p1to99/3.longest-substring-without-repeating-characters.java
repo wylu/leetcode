@@ -51,7 +51,7 @@ import java.util.HashMap;
  * @Desc    :
  */
 // @lc code=start
-class Solution {
+class Solution3 {
     public int lengthOfLongestSubstring(String s) {
         if (s == null) {
             return -1;
