@@ -38,8 +38,6 @@ public class InorderTraversal {
 
     private static List<Integer> iterate(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
-        if (root == null) return res;
-
         // 借助栈实现迭代中序遍历二叉树
         LinkedList<TreeNode> stack = new LinkedList<>();
         while (root != null || !stack.isEmpty()) {
