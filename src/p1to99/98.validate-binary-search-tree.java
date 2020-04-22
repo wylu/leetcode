@@ -78,7 +78,7 @@ import common.TreeNode;
  * @License :   (C)Copyright 2020, wylu-CHINA-SHENZHEN
  * @Desc    :
  */
-class Solution {
+class Solution98 {
     public boolean isValidBST(TreeNode root) {
         return inorder(root, new TreeNode[]{null});
     }
