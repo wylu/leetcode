@@ -68,7 +68,7 @@ import java.util.List;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution103 {
     /**
      * 之字形打印二叉树
      * 使用两个辅助栈，在打印某一层结点时，把下一层的结点保存到相应的栈里。
