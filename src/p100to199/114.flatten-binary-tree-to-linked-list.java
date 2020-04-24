@@ -67,7 +67,7 @@ import common.TreeNode;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution114 {
     public void flatten(TreeNode root) {
         if (root == null) {
             return;
