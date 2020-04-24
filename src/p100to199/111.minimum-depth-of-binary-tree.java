@@ -59,7 +59,7 @@ import common.TreeNode;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution111 {
     public int res = Integer.MAX_VALUE;
 
     public int minDepth(TreeNode root) {
