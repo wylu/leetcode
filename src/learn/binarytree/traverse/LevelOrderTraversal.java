@@ -17,14 +17,22 @@ import java.util.List;
  * @Desc    :
  */
 public class LevelOrderTraversal {
+    /**
+     * 1.使用两个指针，curTail指向当前层的最右结点，nextTail指向下一层的最右结点；
+     *   创建辅助队列，将根结点压入队列中
+     * 2.如果当前结点的左子结点不为空，则左子结点入队列，并更新nextTail
+     * 3.如果当前结点的右子结点不为空，则右子结点入队列，并更新nextTail
+     * 4.如果当前结点已是当前层的最右结点，则将curTail更新为nextTail
+     * 5.重复步骤2、3、4，直至队列空
+     *
+     * @param root 树的根结点
+     * @return 层次遍历结果
+     */
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        if (root == null) {
-            return res;
-        }
+        if (root == null) return res;
 
-        TreeNode cur = root;
-        TreeNode next = null;
+        TreeNode curTail = root, nextTail = null;
         LinkedList<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         List<Integer> level = new ArrayList<>();
@@ -33,16 +41,16 @@ public class LevelOrderTraversal {
             level.add(node.val);
             if (node.left != null) {
                 queue.offer(node.left);
-                next = node.left;
+                nextTail = node.left;
             }
             if (node.right != null) {
                 queue.offer(node.right);
-                next = node.right;
+                nextTail = node.right;
             }
-            if (node == cur) {
+            if (node == curTail) {
                 res.add(level);
                 level = new ArrayList<>();
-                cur = next;
+                curTail = nextTail;
             }
         }
         return res;
