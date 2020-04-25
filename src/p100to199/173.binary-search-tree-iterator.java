@@ -80,7 +80,7 @@ import java.util.LinkedList;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class BSTIterator173 {
+class BSTIterator {
     private LinkedList<TreeNode> stack = new LinkedList<>();
 
     /**
