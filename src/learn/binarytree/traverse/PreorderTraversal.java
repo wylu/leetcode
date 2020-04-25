@@ -36,20 +36,26 @@ class PreorderTraversal {
         recursive(root.right, res);
     }
 
+    /**
+     * 创建一个辅助栈：
+     * 1.将根结点压入栈
+     * 2.弹出栈顶结点，将结点值追加到结果序列的尾部
+     * 3.然后先将右子结点压入栈中（如果有）
+     * 4.再将左子结点压入栈中（如果有）
+     * 5.重复步骤2、3、4，直至栈空
+     *
+     * @param root 树的根结点
+     * @return 前序遍历结果
+     */
     private static List<Integer> iterate(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
         if (root == null) return res;
-
-        // 借助栈实现迭代前序遍历二叉树
         LinkedList<TreeNode> stack = new LinkedList<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             root = stack.pop();
-            // 访问当前树的根结点
             res.add(root.val);
-            // 先将右子树压入栈，以确保先遍历左子树
             if (root.right != null) stack.push(root.right);
-            // 将左子树压入栈
             if (root.left != null) stack.push(root.left);
         }
         return res;

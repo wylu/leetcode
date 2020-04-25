@@ -36,33 +36,56 @@ public class PostorderTraversal {
         res.add(root.val);
     }
 
+    /**
+     * 创建一个辅助栈：
+     * 1.将根结点压入栈
+     * 2.弹出栈顶结点，将结点值插入结果序列的头部
+     * 3.然后先将左子结点压入栈中（如果有）
+     * 4.再将右子结点压入栈中（如果有）
+     * 5.重复步骤2、3、4，直至栈空
+     *
+     * @param root 树的根结点
+     * @return 后序遍历结果
+     */
     private static List<Integer> iterate(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<>();
+        LinkedList<Integer> res = new LinkedList<>();
         if (root == null) return res;
-
-        // 借助栈实现迭代后序遍历二叉树
         LinkedList<TreeNode> stack = new LinkedList<>();
-        // 记录上一个访问的结点，用于判断“访问根结点之前，右子树是否已访问过”
-        TreeNode last = null;
-        while (root != null || !stack.isEmpty()) {
-            // 确保先遍历未曾访问过的最左结点
-            while (root != null) {
-                stack.push(root);
-                root = root.left;
-            }
-            root = stack.peek();
-            if (root.right == null || root.right == last) {
-                root = stack.pop();
-                res.add(root.val);
-                last = root;
-                // 表示当前root下已经没有未曾访问的结点了
-                root = null;
-            } else {
-                root = root.right;
-            }
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            root = stack.pop();
+            res.addFirst(root.val);
+            if (root.left != null) stack.push(root.left);
+            if (root.right != null) stack.push(root.right);
         }
         return res;
     }
+
+//    private static List<Integer> iterate(TreeNode root) {
+//        ArrayList<Integer> res = new ArrayList<>();
+//        if (root == null) return res;
+//        LinkedList<TreeNode> stack = new LinkedList<>();
+//        // 记录上一个访问的结点，用于判断“访问根结点之前，右子树是否已访问过”
+//        TreeNode last = null;
+//        while (root != null || !stack.isEmpty()) {
+//            // 确保先遍历未曾访问过的最左结点
+//            while (root != null) {
+//                stack.push(root);
+//                root = root.left;
+//            }
+//            root = stack.peek();
+//            if (root.right == null || root.right == last) {
+//                root = stack.pop();
+//                res.add(root.val);
+//                last = root;
+//                // 表示当前root下已经没有未曾访问的结点了
+//                root = null;
+//            } else {
+//                root = root.right;
+//            }
+//        }
+//        return res;
+//    }
 
     public static List<Integer> recursiveTraversal(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();

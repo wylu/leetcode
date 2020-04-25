@@ -36,12 +36,21 @@ public class InorderTraversal {
         recursive(root.right, res);
     }
 
+    /**
+     * 创建一个辅助栈：
+     * 1.当前结点置为根结点
+     * 2.如果当前结点不为空，则将最左路径的所有结点压入栈中
+     * 3.弹出栈顶结点作为当前结点，将结点值追加到结果序列的尾部
+     * 4.然后将当前结点置为当前结点的右子结点
+     * 5.重复步骤2、3、4，直至当前结点为空且栈空
+     *
+     * @param root 树的根结点
+     * @return 中序遍历结果
+     */
     private static List<Integer> iterate(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
-        // 借助栈实现迭代中序遍历二叉树
         LinkedList<TreeNode> stack = new LinkedList<>();
         while (root != null || !stack.isEmpty()) {
-            // 确保先遍历未曾访问过的最左结点
             while (root != null) {
                 stack.push(root);
                 root = root.left;
