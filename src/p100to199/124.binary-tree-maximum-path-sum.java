@@ -72,7 +72,7 @@ import common.TreeNode;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution124 {
     public int res = Integer.MIN_VALUE;
 
     /**
