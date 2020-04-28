@@ -58,7 +58,7 @@ import java.util.LinkedList;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-public class Codec {
+class Codec {
     private static final String DELIMITER = ",";
     private static final String PADDING = "$";
 
