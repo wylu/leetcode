@@ -82,7 +82,7 @@ import common.TreeNode;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution450 {
     public TreeNode deleteNode(TreeNode root, int key) {
         TreeNode pre = null, cur = root;
         while (cur != null && cur.val != key) {
