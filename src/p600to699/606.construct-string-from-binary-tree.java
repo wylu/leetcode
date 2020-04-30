@@ -85,7 +85,7 @@ import sun.invoke.empty.Empty;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Solution {
+class Solution606 {
     public String tree2str(TreeNode t) {
         if (t == null) return "";
         if (t.left == null && t.right == null) return t.val + "";
