@@ -1,7 +1,6 @@
 package p600to699;
 
 import common.TreeNode;
-import sun.invoke.empty.Empty;
 
 /*
  * @lc app=leetcode id=606 lang=java
