@@ -41,7 +41,7 @@ int BFS(Node root, Node target) {
 ```
 
 1. As shown in the code, in each round, the nodes in the queue are the nodes which are waiting to be processed.
-2. After each outer while loop, we are one step farther from the root node. The variable step indicates the distance from the root node and the current node we are visiting.
+2. After each outer `while` loop, we are one step farther from the root node. The variable `step` indicates the distance from the root node and the current node we are visiting.
 
 ## Template II
 
@@ -79,7 +79,7 @@ int BFS(Node root, Node target) {
 }
 ```
 
-There are some cases where one does not need keep the visited hash set:
+There are some cases where one does not need keep the `visited` hash set:
 
 1. You are absolutely sure there is no cycle, for example, in tree traversal;
 2. You do want to add the node to the queue multiple times.
