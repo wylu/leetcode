@@ -1,4 +1,4 @@
-package learn.recursion2;
+package learn.recursion2.divideandconquer;
 
 /**
  * @File    :   SortAnArray.java
