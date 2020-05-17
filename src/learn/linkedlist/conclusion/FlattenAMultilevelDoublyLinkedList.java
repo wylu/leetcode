@@ -11,14 +11,14 @@ import java.util.LinkedList;
  * @License :   Copyright © 2020, wylu-CHINA-SHENZHEN. All rights reserved.
  * @Desc    :
  */
-class Node {
-    public int val;
-    public Node prev;
-    public Node next;
-    public Node child;
-}
-
 public class FlattenAMultilevelDoublyLinkedList {
+    class Node {
+        public int val;
+        public Node prev;
+        public Node next;
+        public Node child;
+    }
+
     public Node flatten(Node head) {
         LinkedList<Node> stack = new LinkedList<>();
         Node pre = null, cur = head;
