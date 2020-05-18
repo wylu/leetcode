@@ -25,14 +25,14 @@ public class ReverseLinkedList {
         return p;
     }
 
-    private ListNode iterate(ListNode head) {
-        ListNode prev = null, next;
-        while (head != null) {
-            next = head.next;
-            head.next = prev;
-            prev = head;
-            head = next;
-        }
-        return prev;
-    }
+    // private ListNode iterate(ListNode head) {
+    //     ListNode prev = null, next;
+    //     while (head != null) {
+    //         next = head.next;
+    //         head.next = prev;
+    //         prev = head;
+    //         head = next;
+    //     }
+    //     return prev;
+    // }
 }
