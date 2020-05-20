@@ -1,4 +1,4 @@
-package learn.arrayandstring;
+package learn.arrayandstring.array;
 
 import java.util.Arrays;
 
