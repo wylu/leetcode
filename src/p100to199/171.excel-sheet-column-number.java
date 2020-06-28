@@ -72,7 +72,7 @@ package p100to199;
  * @Desc    :
  */
 // @lc code=start
-class Solution {
+class Solution171 {
     public int titleToNumber(String s) {
         int res = 0;
         for (char ch : s.toCharArray()) {
